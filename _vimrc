@@ -1,87 +1,33 @@
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Maintainer: amix the lucky stiff
-"             http://amix.dk - amix@amix.dk
-"
-" Version: 3.6 - 25/08/10 14:40:30
-"
-" Blog_post: 
-"       http://amix.dk/blog/post/19486#The-ultimate-vim-configuration-vimrc
-" Syntax_highlighted:
-"       http://amix.dk/vim/vimrc.html
-" Raw_version: 
-"       http://amix.dk/vim/vimrc.txt
-"
-" How_to_Install_on_Unix:
-"    $ mkdir ~/.vim_runtime
-"    $ svn co svn://orangoo.com/vim ~/.vim_runtime
-"    $ cat ~/.vim_runtime/install.sh
-"    $ sh ~/.vim_runtime/install.sh <system>
-"      <sytem> can be `mac`, `linux` or `windows`
-"
-" How_to_Upgrade:
-"    $ svn update ~/.vim_runtime
-"
-" Sections:
-"    -> General
-"    -> VIM user interface
-"    -> Colors and Fonts
-"    -> Files and backups
-"    -> Text, tab and indent related
-"    -> Visual mode related
-"    -> Command mode related
-"    -> Moving around, tabs and buffers
-"    -> Statusline
-"    -> Parenthesis/bracket expanding
-"    -> General Abbrevs
-"    -> Editing mappings
-"
-"    -> Cope
-"    -> Minibuffer plugin
-"    -> Omni complete functions
-"    -> Python section
-"    -> JavaScript section
-"
-"
-" Plugins_Included:
-"     > minibufexpl.vim - http://www.vim.org/scripts/script.php?script_id=159
-"       Makes it easy to get an overview of buffers:
-"           info -> :e ~/.vim_runtime/plugin/minibufexpl.vim
-" 
-"     > bufexplorer - http://www.vim.org/scripts/script.php?script_id=42
-"       Makes it easy to switch between buffers:
-"           info -> :help bufExplorer
-"
-"     > yankring.vim - http://www.vim.org/scripts/script.php?script_id=1234
-"       Emacs's killring, useful when using the clipboard:
-"           info -> :help yankring
-"
-"     > surround.vim - http://www.vim.org/scripts/script.php?script_id=1697
-"       Makes it easy to work with surrounding text:
-"           info -> :help surround
-"
-"     > snipMate.vim - http://www.vim.org/scripts/script.php?script_id=2540
-"       Snippets for many languages (similar to TextMate's):
-"           info -> :help snipMate
-"
-"     > mru.vim - http://www.vim.org/scripts/script.php?script_id=521
-"       Plugin to manage Most Recently Used (MRU) files:
-"           info -> :e ~/.vim_runtime/plugin/mru.vim
-"
-"     > Command-T - http://www.vim.org/scripts/script.php?script_id=3025
-"       Command-T plug-in provides an extremely fast, intuitive mechanism for opening filesa:
-"           info -> :help CommandT
-"           screencast and web-help -> http://amix.dk/blog/post/19501
-"
-"
-"  Revisions:
-"     > 3.6: Added lots of stuff (colors, Command-T, Vim 7.3 persistent undo etc.)
-"     > 3.5: Paste mode is now shown in status line  if you are in paste mode
-"     > 3.4: Added mru.vim
-"     > 3.3: Added syntax highlighting for Mako mako.vim 
-"     > 3.2: Turned on python_highlight_all for better syntax
-"            highlighting for Python
-"     > 3.1: Added revisions ;) and bufexplorer.vim
-"
+set nocompatible
+"source $VIMRUNTIME/vimrc_example.vim
+source $VIMRUNTIME/mswin.vim
+behave mswin
+
+set diffexpr=MyDiff()
+function MyDiff()
+  let opt = '-a --binary '
+  if &diffopt =~ 'icase' | let opt = opt . '-i ' | endif
+  if &diffopt =~ 'iwhite' | let opt = opt . '-b ' | endif
+  let arg1 = v:fname_in
+  if arg1 =~ ' ' | let arg1 = '"' . arg1 . '"' | endif
+  let arg2 = v:fname_new
+  if arg2 =~ ' ' | let arg2 = '"' . arg2 . '"' | endif
+  let arg3 = v:fname_out
+  if arg3 =~ ' ' | let arg3 = '"' . arg3 . '"' | endif
+  let eq = ''
+  if $VIMRUNTIME =~ ' '
+    if &sh =~ '\<cmd'
+      let cmd = '""' . $VIMRUNTIME . '\diff"'
+      let eq = '"'
+    else
+      let cmd = substitute($VIMRUNTIME, ' ', '" ', '') . '\diff"'
+    endif
+  else
+    let cmd = $VIMRUNTIME . '\diff'
+  endif
+  silent execute '!' . cmd . ' ' . opt . arg1 . ' ' . arg2 . ' > ' . arg3 . eq
+endfunction
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Check system configuration
 fun! MySys()
@@ -134,7 +80,7 @@ set wildmenu "Turn on WiLd menu
 
 set ruler "Always show current position
 
-set cmdheight=2 "The commandbar height
+set cmdheight=1 "The commandbar height
 
 set hid "Change buffer - without saving
 
@@ -444,7 +390,7 @@ function! HasPaste()
 endfunction
 
 " Format the statusline
-set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{CurDir()}%h\ \ \ Line:\ %l/%L%{GitBranch()}
+set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{CurDir()}%h\ \ "\ Line:\ %l/%L%{GitBranch()}
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Parenthesis/bracket expanding
