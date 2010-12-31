@@ -609,3 +609,8 @@ let NERDTreeWinSize = 20
 let Tlist_Use_Right_Window=1
 let Tlist_WinWidth=20
 let g:miniBufExplMapCTabSwitchBufs = 1
+
+" Map Zen Coding
+let g:user_zen_leader_key = '<c-n>'
+" Escapte Key
+:inoremap <S-CR> <Esc>
