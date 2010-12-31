@@ -361,7 +361,7 @@ autocmd BufReadPost *
 
 
 "Remeber open buffers on close
-set viminfo^=%
+"set viminfo^=%
 
 
 """"""""""""""""""""""""""""""
@@ -609,6 +609,7 @@ let NERDTreeWinSize = 20
 let Tlist_Use_Right_Window=1
 let Tlist_WinWidth=20
 let g:miniBufExplMapCTabSwitchBufs = 1
+set nu!
 
-" Escapte Key
+" Escape Key
 :inoremap <S-CR> <Esc>
