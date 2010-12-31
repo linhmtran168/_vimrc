@@ -613,3 +613,6 @@ set nu!
 
 " Escape Key
 :inoremap <S-CR> <Esc>
+
+" Jquery syntax
+au BufRead,BufNewFile jquery.*.js set ft=javascript syntax=jquery
