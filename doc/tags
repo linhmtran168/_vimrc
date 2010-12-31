@@ -64,6 +64,7 @@
 :AcpEnable	acp.txt	/*:AcpEnable*
 :AcpLock	acp.txt	/*:AcpLock*
 :AcpUnlock	acp.txt	/*:AcpUnlock*
+:CheckSyntax	checksyntax.txt	/*:CheckSyntax*
 :CommandT	command-t.txt	/*:CommandT*
 :CommandTFlush	command-t.txt	/*:CommandTFlush*
 :FufBookmarkDir	fuf.txt	/*:FufBookmarkDir*
@@ -100,6 +101,7 @@
 :FufTag	fuf.txt	/*:FufTag*
 :FufTagWithCursorWord	fuf.txt	/*:FufTagWithCursorWord*
 :FufTaggedFile	fuf.txt	/*:FufTaggedFile*
+:HighlightTags	easytags.txt	/*:HighlightTags*
 :MatchDebug	matchit.txt	/*:MatchDebug*
 :NERDTree	NERD_tree.txt	/*:NERDTree*
 :NERDTreeClose	NERD_tree.txt	/*:NERDTreeClose*
@@ -123,6 +125,7 @@
 :TlistUndebug	taglist.txt	/*:TlistUndebug*
 :TlistUnlock	taglist.txt	/*:TlistUnlock*
 :TlistUpdate	taglist.txt	/*:TlistUpdate*
+:UpdateTags	easytags.txt	/*:UpdateTags*
 <C-Y>,	zencoding.txt	/*<C-Y>,*
 <C-Y>/	zencoding.txt	/*<C-Y>\/*
 <C-Y>A	zencoding.txt	/*<C-Y>A*
@@ -134,6 +137,7 @@
 <C-Y>j	zencoding.txt	/*<C-Y>j*
 <C-Y>k	zencoding.txt	/*<C-Y>k*
 <C-Y>n	zencoding.txt	/*<C-Y>n*
+<F5>	checksyntax.txt	/*<F5>*
 AddToLispWords	clojure.txt	/*AddToLispWords*
 DocLookupInteractive	clojure.txt	/*DocLookupInteractive*
 DocLookupWord	clojure.txt	/*DocLookupWord*
@@ -326,6 +330,8 @@ bufexplorer-usage	bufexplorer.txt	/*bufexplorer-usage*
 bufexplorer-windowlayout	bufexplorer.txt	/*bufexplorer-windowlayout*
 bufexplorer.txt	bufexplorer.txt	/*bufexplorer.txt*
 buffer-explorer	bufexplorer.txt	/*buffer-explorer*
+checksyntax#Check()	checksyntax.txt	/*checksyntax#Check()*
+checksyntax.txt	checksyntax.txt	/*checksyntax.txt*
 clj-nailgun-server	clojure.txt	/*clj-nailgun-server*
 clojure.vim	clojure.txt	/*clojure.vim*
 command-t	command-t.txt	/*command-t*
@@ -348,6 +354,7 @@ command-t-wildignore	command-t.txt	/*command-t-wildignore*
 command-t.txt	command-t.txt	/*command-t.txt*
 cs	surround.txt	/*cs*
 ds	surround.txt	/*ds*
+easytags.txt	easytags.txt	/*easytags.txt*
 eb	clojure.txt	/*eb*
 ef	clojure.txt	/*ef*
 el	clojure.txt	/*el*
@@ -485,6 +492,14 @@ g:bufExplorerSortBy	bufexplorer.txt	/*g:bufExplorerSortBy*
 g:bufExplorerSplitBelow	bufexplorer.txt	/*g:bufExplorerSplitBelow*
 g:bufExplorerSplitOutPathName	bufexplorer.txt	/*g:bufExplorerSplitOutPathName*
 g:bufExplorerSplitRight	bufexplorer.txt	/*g:bufExplorerSplitRight*
+g:checksyntax	checksyntax.txt	/*g:checksyntax*
+g:easytags_always_enabled	easytags.txt	/*g:easytags_always_enabled*
+g:easytags_autorecurse	easytags.txt	/*g:easytags_autorecurse*
+g:easytags_cmd	easytags.txt	/*g:easytags_cmd*
+g:easytags_file	easytags.txt	/*g:easytags_file*
+g:easytags_include_members	easytags.txt	/*g:easytags_include_members*
+g:easytags_on_cursorhold	easytags.txt	/*g:easytags_on_cursorhold*
+g:easytags_resolve_links	easytags.txt	/*g:easytags_resolve_links*
 g:fuf_abbrevMap	fuf.txt	/*g:fuf_abbrevMap*
 g:fuf_autoPreview	fuf.txt	/*g:fuf_autoPreview*
 g:fuf_bookmarkdir_keyDelete	fuf.txt	/*g:fuf_bookmarkdir_keyDelete*
@@ -564,6 +579,7 @@ g:snips_author	snipMate.txt	/*g:snips_author*
 gi	clojure.txt	/*gi*
 global-example	yankring.txt	/*global-example*
 gw	clojure.txt	/*gw*
+i_<F5>	checksyntax.txt	/*i_<F5>*
 i_CTRL-G_S	surround.txt	/*i_CTRL-G_S*
 i_CTRL-G_s	surround.txt	/*i_CTRL-G_s*
 i_CTRL-R_<Tab>	snipMate.txt	/*i_CTRL-R_<Tab>*
