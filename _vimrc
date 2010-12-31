@@ -1,3 +1,27 @@
+""" List of plugins
+" > Snipmate
+" > Yankring
+" > Taglist
+" > NERDTree
+" > NERDCommenter
+" > AutoComplete
+" > FuzzyFinder
+" > Minibufexplorer
+" > Buffexplorer
+" > Easytag
+" > Checksyntax
+" > Xmledit
+" > Surround
+" > Command-T
+" > Python syntax
+" > Css Colors
+" > Clojure
+" > Zencoding
+" > MRU
+" > Matchit
+" > Jquery
+"""""""""""""""""""""""
+
 set nocompatible
 "source $VIMRUNTIME/vimrc_example.vim
 source $VIMRUNTIME/mswin.vim
