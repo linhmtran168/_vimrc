@@ -20,6 +20,7 @@
 " > MRU
 " > Matchit
 " > Jquery
+" > PHP Indent
 """""""""""""""""""""""
 
 set nocompatible
