@@ -56,7 +56,7 @@ endfunction
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Check system configuration
 fun! MySys()
-   return "$1"
+   return "windows"
 endfun
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -143,7 +143,7 @@ if MySys() == "mac"
   set gfn=Menlo:h14
   set shell=/bin/bash
 elseif MySys() == "windows"
-  set gfn=Bitstream\ Vera\ Sans\ Mono:h10
+  set gfn=Consolas:h10
 elseif MySys() == "linux"
   set gfn=Monospace\ 10
   set shell=/bin/bash
@@ -152,11 +152,11 @@ endif
 if has("gui_running")
   set guioptions-=T
   set background=dark
-  colorscheme peaksea
+  colorscheme zenburn
   set nonu
 else
   set t_Co=256
-  colorscheme peaksea
+  colorscheme zenburn
   set background=dark
   set nonu
 endif
