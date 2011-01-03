@@ -162,7 +162,7 @@ else
   set nonu
 endif
 
-set encoding=utf8
+set enc=utf-8
 try
     lang en_US
 catch
