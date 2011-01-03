@@ -21,6 +21,8 @@
 " > Matchit
 " > Jquery
 " > PHP Indent
+" > shell
+" > FencView
 """""""""""""""""""""""
 
 set nocompatible
