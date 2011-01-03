@@ -9,7 +9,6 @@
 " > Minibufexplorer
 " > Buffexplorer
 " > Easytag
-" > Checksyntax
 " > Xmledit
 " > Surround
 " > Command-T
