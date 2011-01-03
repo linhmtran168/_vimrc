@@ -635,6 +635,7 @@ let NERDTreeWinSize = 20
 let Tlist_Use_Right_Window=1
 let Tlist_WinWidth=20
 let g:miniBufExplMapCTabSwitchBufs = 1
+let g:easytags_on_cursorhold = 0
 set nu!
 
 " Escape Key
