@@ -11,7 +11,6 @@
 " > Easytag
 " > Xmledit
 " > Surround
-" > Command-T
 " > Python syntax
 " > Css Colors
 " > Clojure
@@ -22,6 +21,7 @@
 " > PHP Indent
 " > shell
 " > FencView
+" > dbext.vim
 """""""""""""""""""""""
 
 set nocompatible
@@ -527,7 +527,7 @@ map <leader>ss :setlocal spell!<cr>
 "Shortcuts using <leader>
 map <leader>sn ]s
 map <leader>sp [s
-map <leader>sa zg
+map <leader>sc zg
 map <leader>s? z=
 
 
