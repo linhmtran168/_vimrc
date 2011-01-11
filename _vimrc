@@ -643,3 +643,5 @@ set nu!
 
 " Jquery syntax
 au BufRead,BufNewFile jquery.*.js set ft=javascript syntax=jquery
+" Zenburn color
+let g:zenburn_high_Constrast=1
