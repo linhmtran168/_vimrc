@@ -18,7 +18,6 @@
 " > MRU
 " > Matchit
 " > Jquery
-" > PHP Indent
 " > shell
 " > FencView
 " > dbext.vim
