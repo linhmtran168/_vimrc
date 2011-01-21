@@ -21,6 +21,7 @@
 " > shell
 " > FencView
 " > dbext.vim
+" > Conque
 """""""""""""""""""""""
 
 set nocompatible
