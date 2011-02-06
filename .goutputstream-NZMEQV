@@ -22,7 +22,7 @@
 " > FencView
 " > dbext.vim
 " > Conque
-" > Tasklist
+" > TaskList
 """""""""""""""""""""""
 
 set nocompatible
