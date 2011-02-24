@@ -628,7 +628,7 @@ endif
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => My personal configuration
-" """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 let g:acp_behaviorSnipmateLength=1
 let NERDTreeChDirMode=2
@@ -651,4 +651,5 @@ let g:zenburn_high_Constrast=1
 let g:SuperTabDefaultCompletionType = "context"
 
 " Disable auto-comment
-au FileType * setlocal comments=
+au FileType * setlocal comments-=:#
+au FileType * setlocal comments-=://

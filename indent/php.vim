@@ -16,6 +16,8 @@ runtime! indent/php.vim
 unlet s:doing_indent_inits
 
 function! GetPhpHtmlIndent(lnum)
+  setlocal comments-=:#
+  setlocal comments-=://
   if exists('*HtmlIndent')
     let html_ind = HtmlIndent()
   else
@@ -38,4 +40,3 @@ endfunction
 
 setlocal indentexpr=GetPhpHtmlIndent(v:lnum)
 setlocal indentkeys+=<>>
-
