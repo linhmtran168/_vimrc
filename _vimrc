@@ -23,6 +23,7 @@
 " > dbext.vim
 " > Conque
 " > TaskList
+" > Supertab
 """""""""""""""""""""""
 
 set nocompatible
@@ -632,9 +633,9 @@ endif
 let g:acp_behaviorSnipmateLength=1
 let NERDTreeChDirMode=2
 let NERDTreeShowBookmarks=1
-let NERDTreeWinSize = 20
+let NERDTreeWinSize = 30
 let Tlist_Use_Right_Window=1
-let Tlist_WinWidth=20
+let Tlist_WinWidth=30
 let g:miniBufExplMapCTabSwitchBufs = 1
 let g:easytags_on_cursorhold = 0
 set nu!
@@ -646,3 +647,8 @@ set nu!
 au BufRead,BufNewFile jquery.*.js set ft=javascript syntax=jquery
 " Zenburn color
 let g:zenburn_high_Constrast=1
+" Supertab
+let g:SuperTabDefaultCompletionType = "context"
+
+" Disable auto-comment
+au FileType * setlocal comments=

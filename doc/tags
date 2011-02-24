@@ -60,8 +60,6 @@
 'snippets'	snipMate.txt	/*'snippets'*
 .snippet	snipMate.txt	/*.snippet*
 .snippets	snipMate.txt	/*.snippets*
-/MyProjectDir/	dbext.txt	/*\/MyProjectDir\/*
-/MyProjectDir/	dbext.txt	/*\/MyProjectDir\/*
 :AcpDisable	acp.txt	/*:AcpDisable*
 :AcpEnable	acp.txt	/*:AcpEnable*
 :AcpLock	acp.txt	/*:AcpLock*
@@ -272,8 +270,11 @@ NERDTreeRender()	NERD_tree.txt	/*NERDTreeRender()*
 NERD_commenter.txt	NERD_commenter.txt	/*NERD_commenter.txt*
 NERD_tree.txt	NERD_tree.txt	/*NERD_tree.txt*
 ODBC	dbext.txt	/*ODBC*
+ReloadAllSnippets()	snipMate.txt	/*ReloadAllSnippets()*
+ReloadSnippets()	snipMate.txt	/*ReloadSnippets()*
 RequireFile	clojure.txt	/*RequireFile*
 RequireFileAll	clojure.txt	/*RequireFileAll*
+ResetAllSnippets()	snipMate.txt	/*ResetAllSnippets()*
 ResetSnippets()	snipMate.txt	/*ResetSnippets()*
 RunTests	clojure.txt	/*RunTests*
 SourceLookupInteractive	clojure.txt	/*SourceLookupInteractive*
@@ -766,6 +767,7 @@ snipMate-expandtab	snipMate.txt	/*snipMate-expandtab*
 snipMate-features	snipMate.txt	/*snipMate-features*
 snipMate-filename	snipMate.txt	/*snipMate-filename*
 snipMate-indenting	snipMate.txt	/*snipMate-indenting*
+snipMate-license	snipMate.txt	/*snipMate-license*
 snipMate-placeholders	snipMate.txt	/*snipMate-placeholders*
 snipMate-remap	snipMate.txt	/*snipMate-remap*
 snipMate-settings	snipMate.txt	/*snipMate-settings*
