@@ -18,12 +18,12 @@
 " > MRU
 " > Matchit
 " > Jquery
-" > shell
 " > FencView
 " > dbext.vim
 " > Conque
 " > TaskList
 " > Supertab
+" > Command-T
 """""""""""""""""""""""
 
 set nocompatible
