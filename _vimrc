@@ -155,7 +155,7 @@ endif
 if has("gui_running")
   set guioptions-=T
   set background=dark
-  colorscheme zenburn
+  colorscheme peaksea
   set nonu
 else
   set t_Co=256
@@ -640,13 +640,9 @@ let g:miniBufExplMapCTabSwitchBufs = 1
 let g:easytags_on_cursorhold = 0
 set nu!
 
-" Escape Key
-:inoremap <S-CR> <Esc>
-
 " Jquery syntax
 au BufRead,BufNewFile jquery.*.js set ft=javascript syntax=jquery
-" Zenburn color
-let g:zenburn_high_Constrast=1
+
 " Supertab
 let g:SuperTabDefaultCompletionType = "context"
 
