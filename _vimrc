@@ -24,6 +24,7 @@
 " > TaskList
 " > Supertab
 " > Command-T
+" > JavaScript Indent
 """""""""""""""""""""""
 
 set nocompatible
