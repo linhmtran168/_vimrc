@@ -25,6 +25,9 @@
 " > Supertab
 " > Command-T
 " > JavaScript Indent
+" > Vscommand
+" > Pathogen
+" > Coffee-script
 """""""""""""""""""""""
 
 set nocompatible
@@ -63,6 +66,8 @@ fun! MySys()
    return "windows"
 endfun
 
+" Pathogen
+call pathogen#runtime_append_all_bundles()
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => General
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -638,7 +643,6 @@ let NERDTreeWinSize = 30
 let Tlist_Use_Right_Window=1
 let Tlist_WinWidth=30
 let g:miniBufExplMapCTabSwitchBufs = 1
-let g:easytags_on_cursorhold = 0
 set nu!
 
 " Jquery syntax
