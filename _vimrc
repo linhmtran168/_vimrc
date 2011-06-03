@@ -28,6 +28,7 @@
 " > Vscommand
 " > Pathogen
 " > Coffee-script
+" > shell
 """""""""""""""""""""""
 
 set nocompatible
