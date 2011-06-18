@@ -29,6 +29,7 @@
 " > Pathogen
 " > Coffee-script
 " > shell
+" > markdown syntax
 """""""""""""""""""""""
 
 set nocompatible
