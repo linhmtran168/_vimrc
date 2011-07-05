@@ -1,36 +1,11 @@
-﻿"""""""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " My vim configuration file
-"""""""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 set nocompatible
 "source $VIMRUNTIME/vimrc_example.vim
 source $VIMRUNTIME/mswin.vim
 behave mswin
-
-set diffexpr=MyDiff()
-function MyDiff()
-  let opt = '-a --binary '
-  if &diffopt =~ 'icase' | let opt = opt . '-i ' | endif
-  if &diffopt =~ 'iwhite' | let opt = opt . '-b ' | endif
-  let arg1 = v:fname_in
-  if arg1 =~ ' ' | let arg1 = '"' . arg1 . '"' | endif
-  let arg2 = v:fname_new
-  if arg2 =~ ' ' | let arg2 = '"' . arg2 . '"' | endif
-  let arg3 = v:fname_out
-  if arg3 =~ ' ' | let arg3 = '"' . arg3 . '"' | endif
-  let eq = ''
-  if $VIMRUNTIME =~ ' '
-    if &sh =~ '\<cmd'
-      let cmd = '""' . $VIMRUNTIME . '\diff"'
-      let eq = '"'
-    else
-      let cmd = substitute($VIMRUNTIME, ' ', '" ', '') . '\diff"'
-    endif
-  else
-    let cmd = $VIMRUNTIME . '\diff'
-  endif
-  silent execute '!' . cmd . ' ' . opt . arg1 . ' ' . arg2 . ' > ' . arg3 . eq
-endfunction
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Check system configuration
@@ -61,16 +36,16 @@ nmap <leader>w :w!<cr>
 
 if MySys() == "windows"
     " Fast editing of the .vimrc
-    map <leader>e :e! ~/_vim_runtime/vimrc<cr>
+    map <leader>e :e! D:\Softwares\Vimv\_vimrc<cr>
 
     " When vimrc is edited, reload it
-    autocmd! bufwritepost vimrc source ~/_vim_runtime/vimrc
+    autocmd! bufwritepost vimrc source D:\Softwares\Vimv\_vimrc
 else
     " Fast editing of the .vimrc
-    map <leader>e :e! ~/.vim_runtime/vimrc<cr>
+    map <leader>e :e! D:\Softwares\Vimv\_vimrc<cr>
 
     " When vimrc is edited, reload it
-    autocmd! bufwritepost vimrc source ~/.vim_runtime/vimrc
+    autocmd! bufwritepost vimrc source D:\Softwares\Vimv\_vimrc
 endif
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -208,7 +183,7 @@ try
     if MySys() == "windows"
       set undodir=C:\Windows\Temp
     else
-      set undodir=~/.vim_runtime/undodir
+      set undodir=~/.vim/undodir
     endif
     
     set undofile
