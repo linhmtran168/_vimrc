@@ -1,36 +1,6 @@
-""" List of plugins
-" > Snipmate
-" > Yankring
-" > Taglist
-" > NERDTree
-" > NERDCommenter
-" > AutoComplete
-" > FuzzyFinder
-" > Minibufexplorer
-" > Buffexplorer
-" > Easytag
-" > Xmledit
-" > Surround
-" > Python syntax
-" > Css Colors
-" > Clojure
-" > Zencoding
-" > MRU
-" > Matchit
-" > Jquery
-" > FencView
-" > dbext.vim
-" > Conque
-" > TaskList
-" > Supertab
-" > Command-T
-" > JavaScript Indent
-" > Vscommand
-" > Pathogen
-" > Coffee-script
-" > shell
-" > markdown syntax
-"""""""""""""""""""""""
+﻿"""""""""""""""""""""""""""""""""""""""""""""
+" My vim configuration file
+"""""""""""""""""""""""""""""""""""""""""""""
 
 set nocompatible
 "source $VIMRUNTIME/vimrc_example.vim
@@ -68,8 +38,6 @@ fun! MySys()
    return "windows"
 endfun
 
-" Pathogen
-call pathogen#runtime_append_all_bundles()
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => General
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -105,6 +73,52 @@ else
     autocmd! bufwritepost vimrc source ~/.vim_runtime/vimrc
 endif
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Vundle Configuration
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set rtp+=C:\Users\TheEmperor\.vim\bundle\vundle\
+call vundle#rc()
+
+" let Vundle manage Vundle required!
+Bundle 'gmarik/vundle'
+
+" My Bundles:
+"
+" Original repos on github
+Bundle 'tpope/vim-fugitive'
+Bundle 'Lokaltog/vim-easymotion'
+Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
+Bundle 'xolox/vim-easytags'
+Bundle 'xolox/vim-shell'
+Bundle 'msanders/snipmate.vim'
+Bundle 'sukima/xmledit'
+Bundle 'tpope/vim-surround'
+Bundle 'ervandew/supertab'
+Bundle 'hallison/vim-markdown'
+
+"Vim scripts repos
+Bundle 'YankRing.vim'
+Bundle 'L9'
+Bundle 'FuzzyFinder'
+Bundle 'taglist.vim'
+Bundle 'The-NERD-tree'
+Bundle 'The-NERD-Commenter'
+Bundle 'AutoComplPop'
+Bundle 'minibufexpl.vim'
+Bundle 'python.vim'
+Bundle 'css_color.vim'
+Bundle 'VimClojure'
+Bundle 'bufexplorer.zip'
+Bundle 'mru.vim'
+Bundle 'matchit.zip'
+Bundle 'FencView.vim'
+Bundle 'Conque-Shell'
+Bundle 'TaskList.vim'
+Bundle 'JavaScript-Indent'
+Bundle 'peaksea'
+
+" Non github repos
+Bundle 'git://git.wincent.com/command-t.git'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => VIM user interface
@@ -656,3 +670,6 @@ let g:SuperTabDefaultCompletionType = "context"
 " Disable auto-comment
 au FileType * setlocal comments-=:#
 au FileType * setlocal comments-=://
+
+" Easymotion
+let g:EasyMotion_leader_key='<leader>m'
