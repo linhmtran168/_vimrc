@@ -152,6 +152,7 @@ endif
 if has("gui_running")
   set guioptions-=T
   set background=dark
+  set lines=36
   colorscheme peaksea
   set nonu
 else
