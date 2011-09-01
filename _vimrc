@@ -71,7 +71,7 @@ Bundle 'tpope/vim-surround'
 Bundle 'hallison/vim-markdown'
 Bundle 'MarcWeber/vim-addon-mw-utils'
 Bundle 'tomtom/tlib_vim'
-Bundle 'honza/snipmate-snippets'
+"Bundle 'honza/snipmate-snippets'
 "Bundle 'garbas/vim-snipmate'
 Bundle 'pangloss/vim-javascript'
 Bundle 'Shougo/neocomplcache'
@@ -667,11 +667,16 @@ let g:neocomplcache_omni_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
 let g:neocomplcache_omni_patterns.c = '\%(\.\|->\)\h\w*'
 let g:neocomplcache_omni_patterns.cpp = '\h\w*\%(\.\|->\)\h\w*\|\h\w*::'
 
+" NERDTree configuration
 let NERDTreeChDirMode = 2
 let NERDTreeShowBookmarks = 1
 let NERDTreeWinSize = 30
+
+" Tasklist configuration
 let Tlist_Use_Right_Window = 1
 let Tlist_WinWidth = 30
+
+" Minibuffer configuration
 let g:miniBufExplMapCTabSwitchBufs = 1
 set nu!
 
