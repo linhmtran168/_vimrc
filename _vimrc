@@ -65,11 +65,17 @@ Bundle 'Lokaltog/vim-easymotion'
 Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 Bundle 'xolox/vim-easytags'
 Bundle 'xolox/vim-shell'
-Bundle 'msanders/snipmate.vim'
 Bundle 'sukima/xmledit'
 Bundle 'tpope/vim-surround'
-Bundle 'ervandew/supertab'
+"Bundle 'ervandew/supertab'
 Bundle 'hallison/vim-markdown'
+Bundle 'MarcWeber/vim-addon-mw-utils'
+Bundle 'tomtom/tlib_vim'
+Bundle 'honza/snipmate-snippets'
+"Bundle 'garbas/vim-snipmate'
+Bundle 'pangloss/vim-javascript'
+Bundle 'Shougo/neocomplcache'
+Bundle 'Raimondi/delimitMate'
 
 "Vim scripts repos
 Bundle 'YankRing.vim'
@@ -89,11 +95,9 @@ Bundle 'matchit.zip'
 Bundle 'FencView.vim'
 Bundle 'Conque-Shell'
 Bundle 'TaskList.vim'
-Bundle 'JavaScript-Indent'
 Bundle 'peaksea'
 
 " Non github repos
-Bundle 'git://git.wincent.com/command-t.git'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => VIM user interface
@@ -516,7 +520,10 @@ map <leader>u :TMiniBufExplorer<cr>
 " => Omni complete functions
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 autocmd FileType css set omnifunc=csscomplete#CompleteCSS
-
+autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags 
+autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS 
+autocmd FileType python setlocal omnifunc=pythoncomplete#Complete 
+autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Spell checking
@@ -627,21 +634,49 @@ endif
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => My personal configuration
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Disable AutoComplPop
+let g:acp_enableAtStartup = 0
 
-let g:acp_behaviorSnipmateLength=1
-let NERDTreeChDirMode=2
-let NERDTreeShowBookmarks=1
+" Use neocomplcache
+let g:neocomplcache_enable_at_startup = 1
+
+" AutoComplPop like behavior.
+"let g:neocomplcache_enable_auto_select = 1
+
+" superTab like snippets behavior
+imap <expr><TAB> neocomplcache#sources#snippets_complete#expandable() ? "\<Plug>(neocomplcache_snippets_expand)" : pumvisible() ? "\<C-n>" : "\<TAB>"
+
+" Recommended key-mappings for neocomplcache
+" <CR>: close popup and save indent. 
+inoremap <expr><CR>  neocomplcache#smart_close_popup()."\<CR>" 
+" <TAB>: completion. 
+"inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>" 
+" <C-h>, <BS>: close popup and delete backword char. 
+inoremap <expr><C-h> neocomplcache#smart_close_popup()."\<C-h>" 
+inoremap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>" 
+inoremap <expr><C-y>  neocomplcache#close_popup() 
+inoremap <expr><C-e>  neocomplcache#cancel_popup() 
+
+" Enable heavy omni completion for neocomplcache
+if !exists('g:neocomplcache_omni_patterns')
+  let g:neocomplcache_omni_patterns = {}
+endif
+let g:neocomplcache_omni_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
+"autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
+let g:neocomplcache_omni_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
+let g:neocomplcache_omni_patterns.c = '\%(\.\|->\)\h\w*'
+let g:neocomplcache_omni_patterns.cpp = '\h\w*\%(\.\|->\)\h\w*\|\h\w*::'
+
+let NERDTreeChDirMode = 2
+let NERDTreeShowBookmarks = 1
 let NERDTreeWinSize = 30
-let Tlist_Use_Right_Window=1
-let Tlist_WinWidth=30
+let Tlist_Use_Right_Window = 1
+let Tlist_WinWidth = 30
 let g:miniBufExplMapCTabSwitchBufs = 1
 set nu!
 
 " Jquery syntax
 au BufRead,BufNewFile jquery.*.js set ft=javascript syntax=jquery
-
-" Supertab
-let g:SuperTabDefaultCompletionType = "context"
 
 " Disable auto-comment
 au FileType * setlocal comments-=:#
