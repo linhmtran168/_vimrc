@@ -670,7 +670,7 @@ let g:neocomplcache_omni_patterns.cpp = '\h\w*\%(\.\|->\)\h\w*\|\h\w*::'
 " NERDTree configuration
 let NERDTreeChDirMode = 2
 let NERDTreeShowBookmarks = 1
-let NERDTreeWinSize = 30
+let NERDTreeWinSize = 28
 
 " Tasklist configuration
 let Tlist_Use_Right_Window = 1
