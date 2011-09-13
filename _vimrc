@@ -60,35 +60,37 @@ Bundle 'gmarik/vundle'
 " My Bundles:
 "
 " Original repos on github
+Bundle 'tpope/vim-git'
 Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-surround'
+" Bundle 'tpope/vim-unimpaired'
+Bundle 'tpope/vim-ragtag'
+Bundle 'tpope/vim-repeat'
+Bundle 'nathanaelkane/vim-indent-guides'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 Bundle 'xolox/vim-easytags'
 Bundle 'xolox/vim-shell'
 Bundle 'sukima/xmledit'
-Bundle 'tpope/vim-surround'
-"Bundle 'ervandew/supertab'
 Bundle 'hallison/vim-markdown'
 Bundle 'MarcWeber/vim-addon-mw-utils'
 Bundle 'tomtom/tlib_vim'
-"Bundle 'honza/snipmate-snippets'
-"Bundle 'garbas/vim-snipmate'
+Bundle 'tomtom/tcomment_vim'
 Bundle 'pangloss/vim-javascript'
 Bundle 'Shougo/neocomplcache'
 Bundle 'Raimondi/delimitMate'
 
 "Vim scripts repos
 Bundle 'YankRing.vim'
+Bundle 'jQuery'
+" Bundle 'Gundo'
 Bundle 'L9'
 Bundle 'FuzzyFinder'
 Bundle 'taglist.vim'
 Bundle 'The-NERD-tree'
-Bundle 'The-NERD-Commenter'
-Bundle 'AutoComplPop'
 Bundle 'minibufexpl.vim'
 Bundle 'python.vim'
 Bundle 'css_color.vim'
-Bundle 'VimClojure'
 Bundle 'bufexplorer.zip'
 Bundle 'mru.vim'
 Bundle 'matchit.zip'
@@ -634,8 +636,6 @@ endif
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => My personal configuration
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Disable AutoComplPop
-let g:acp_enableAtStartup = 0
 
 " Use neocomplcache
 let g:neocomplcache_enable_at_startup = 1
