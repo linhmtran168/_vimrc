@@ -80,7 +80,7 @@ Bundle 'pangloss/vim-javascript'
 Bundle 'Shougo/neocomplcache'
 Bundle 'Raimondi/delimitMate'
 
-"Vim scripts repos
+" Vim scripts repos
 Bundle 'YankRing.vim'
 Bundle 'jQuery'
 " Bundle 'Gundo'
