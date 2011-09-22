@@ -520,10 +520,11 @@ map <leader>u :TMiniBufExplorer<cr>
 " => Omni complete functions
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 autocmd FileType css set omnifunc=csscomplete#CompleteCSS
-autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags 
-autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS 
-autocmd FileType python setlocal omnifunc=pythoncomplete#Complete 
-autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags 
+autocmd FileType html,markdown set omnifunc=htmlcomplete#CompleteTags 
+autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS 
+autocmd FileType python set omnifunc=pythoncomplete#Complete 
+autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags 
+autocmd FileType ruby set omnifunc=rubycomplete#Complete
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Spell checking
