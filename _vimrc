@@ -70,6 +70,7 @@ Bundle 'nathanaelkane/vim-indent-guides'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 Bundle 'xolox/vim-shell'
+Bundle 'xolox/vim-session'
 Bundle 'sukima/xmledit'
 Bundle 'hallison/vim-markdown'
 Bundle 'MarcWeber/vim-addon-mw-utils'
@@ -78,6 +79,8 @@ Bundle 'tomtom/tcomment_vim'
 Bundle 'pangloss/vim-javascript'
 Bundle 'Shougo/neocomplcache'
 Bundle 'Raimondi/delimitMate'
+Bundle 'derekwyatt/vim-scala'
+Bundle 'othree/html5.vim'
 
 " Vim scripts repos
 Bundle 'YankRing.vim'
