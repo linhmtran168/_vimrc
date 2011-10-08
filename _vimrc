@@ -100,8 +100,6 @@ Bundle 'Conque-Shell'
 Bundle 'TaskList.vim'
 Bundle 'peaksea'
 
-" Non github repos
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => VIM user interface
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -164,7 +162,7 @@ if has("gui_running")
   set nonu
 else
   set t_Co=256
-  colorscheme zenburn
+  colorscheme peaksea
   set background=dark
   set nonu
 endif
@@ -212,7 +210,7 @@ set lbr
 set tw=500
 
 set ai "Auto indent
-set si "Smart indet
+" set si "Smart indent
 set wrap "Wrap lines
 
 
@@ -596,10 +594,10 @@ map <leader>f :MRU<CR>
 """"""""""""""""""""""""""""""
 " => Command-T
 """"""""""""""""""""""""""""""
-let g:CommandTMaxHeight = 15
-set wildignore+=*.o,*.obj,.git,*.pyc
-noremap <leader>j :CommandT<cr>
-noremap <leader>y :CommandTFlush<cr>
+" let g:CommandTMaxHeight = 15
+" set wildignore+=*.o,*.obj,.git,*.pyc
+" noremap <leader>j :CommandT<cr>
+" noremap <leader>y :CommandTFlush<cr>
 
 
 """"""""""""""""""""""""""""""
@@ -623,10 +621,6 @@ au BufRead,BufNewFile ~/buffer iab <buffer> xh1 ================================
 map <leader>pp :setlocal paste!<cr>
 
 map <leader>bb :cd ..<cr>
-
-map <leader>ct :cd ~/Desktop/Todoist/todoist<cr>
-map <leader>cw :cd ~/Desktop/Wedoist/wedoist<cr>
-map <leader>cp :cd ~/Desktop/PlurkGit/trunk<cr>
 
 if MySys() == "mac"
     if has("gui_running")
