@@ -68,7 +68,7 @@ Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-rails'
 Bundle 'nathanaelkane/vim-indent-guides'
 Bundle 'Lokaltog/vim-easymotion'
-Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
+Bundle 'mattn/zencoding-vim'
 Bundle 'xolox/vim-shell'
 Bundle 'xolox/vim-session'
 Bundle 'sukima/xmledit'
@@ -78,6 +78,8 @@ Bundle 'tomtom/tlib_vim'
 Bundle 'tomtom/tcomment_vim'
 Bundle 'pangloss/vim-javascript'
 Bundle 'Shougo/neocomplcache'
+Bundle 'Shougo/unite.vim'
+Bundle 'Shougo/vimfiler'
 Bundle 'Raimondi/delimitMate'
 Bundle 'derekwyatt/vim-scala'
 Bundle 'othree/html5.vim'
@@ -85,8 +87,6 @@ Bundle 'othree/html5.vim'
 " Vim scripts repos
 Bundle 'YankRing.vim'
 Bundle 'jQuery'
-Bundle 'L9'
-Bundle 'FuzzyFinder'
 Bundle 'taglist.vim'
 Bundle 'The-NERD-tree'
 Bundle 'minibufexpl.vim'
@@ -96,7 +96,6 @@ Bundle 'bufexplorer.zip'
 Bundle 'mru.vim'
 Bundle 'matchit.zip'
 Bundle 'FencView.vim'
-Bundle 'Conque-Shell'
 Bundle 'TaskList.vim'
 Bundle 'peaksea'
 
@@ -162,7 +161,7 @@ if has("gui_running")
   set nonu
 else
   set t_Co=256
-  colorscheme peaksea
+  " colorscheme peaksea
   set background=dark
   set nonu
 endif
@@ -690,27 +689,80 @@ let g:neocomplcache_omni_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
 let g:neocomplcache_omni_patterns.c = '\%(\.\|->\)\h\w*'
 let g:neocomplcache_omni_patterns.cpp = '\h\w*\%(\.\|->\)\h\w*\|\h\w*::'
 
-" NERDTree configuration
+" Complete Functions
+let g:neocomplcache_omni_functions = {
+    \ 'python' : 'pythoncomplete#Complete',
+    \ 'ruby' : 'rubycomplete#Complete',
+    \}
+let g:neocomplcache_vim_completefuncs = {
+    \ 'Unite' : 'unite#complete_source',
+    \ 'VimShellExecute' : 'vimshell#complete#vimshell_execute_complete#completefunc',
+    \ 'VimShellInteractive' : 'vimshell#complete#vimshell_execute_complete#completefunc',
+    \ 'VimShellTerminal' : 'vimshell#complete#vimshell_execute_complete#completefunc',
+    \ 'VimFiler' : 'vimfiler#complete',
+    \}
+
+"" NERDTree configuration
 let NERDTreeChDirMode = 2
 let NERDTreeShowBookmarks = 1
 let NERDTreeWinSize = 20
 
-" Tasklist configuration
+"" Tasklist configuration
 let Tlist_Use_Right_Window = 1
 let Tlist_WinWidth = 26
 
-" Minibuffer configuration
+"" Minibuffer configuration
 let g:miniBufExplMapCTabSwitchBufs = 1
 set nu!
 
-" Jquery syntax
+"" Jquery syntax
 au BufRead,BufNewFile jquery.*.js set ft=javascript syntax=jquery
 
-" Disable auto-comment
+"" Disable auto-comment
 au FileType * setlocal comments-=:#
 au FileType * setlocal comments-=://
 au FileType * setlocal comments-=:"
 au FileType * setlocal comments-=:--
 
-" Easymotion
+"" Easymotion
 let g:EasyMotion_leader_key='<leader>m'
+
+"" Zencoding
+let g:user_zen_complete_tag = 1
+let g:user_zen_leader_key = '<c-space>'
+
+"" VimFiler
+noremap <silent> <Leader>s :VimFiler<CR>
+
+"" Unite
+"The prefix key.
+nnoremap [unite] <Nop>
+nmap f [unite]
+
+nnoremap <silent> [unite]c :<C-u>UniteWithCurrentDir -buffer-name=files buffer file_mru bookmark file<CR>
+nnoremap <silent> [unite]b :<C-u>UniteWithBufferDir -buffer-name=files -prompt=%\ buffer file_mru bookmark file<CR>
+nnoremap <silent> [unite]r :<C-u>Unite -buffer-name=register register<CR>
+nnoremap <silent> [unite]o :<C-u>Unite outline<CR>
+nnoremap [unite]f :<C-u>Unite source<CR>
+
+" Start insert.
+"let g:unite_enable_start_insert = 1
+
+autocmd FileType unite call s:unite_my_settings()
+function! s:unite_my_settings()"{{{
+
+" Overwrite settings.
+nmap <buffer> <ESC> <Plug>(unite_exit)
+imap <buffer> jj <Plug>(unite_insert_leave)
+"imap <buffer> <C-w> <Plug>(unite_delete_backward_path)
+
+" <C-l>: manual neocomplcache completion.
+inoremap <buffer> <C-l> <C-x><C-u><C-p><Down>
+endfunction"}}}
+
+let g:unite_source_file_mru_limit = 200
+let g:unite_cursor_line_highlight = 'TabLineSel'
+let g:unite_abbr_highlight = 'TabLine'
+
+" For optimize.
+let g:unite_source_file_mru_filename_format = ''
