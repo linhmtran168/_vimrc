@@ -83,6 +83,7 @@ Bundle 'Shougo/vimfiler'
 Bundle 'Raimondi/delimitMate'
 Bundle 'derekwyatt/vim-scala'
 Bundle 'othree/html5.vim'
+Bundle 'kchmck/vim-coffee-script'
 
 " Vim scripts repos
 Bundle 'YankRing.vim'
