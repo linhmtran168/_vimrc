@@ -87,7 +87,6 @@ Bundle 'othree/html5.vim'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'scrooloose/syntastic'
 Bundle 'nelstrom/vim-textobj-rubyblock'
-Bundle 'robgleeson/hammer.vim'
 Bundle 'kana/vim-textobj-user'
 
 " Vim scripts repos
