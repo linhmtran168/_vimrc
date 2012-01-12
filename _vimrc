@@ -36,16 +36,16 @@ nmap <leader>w :w!<cr>
 
 if MySys() == "windows"
     " Fast editing of the .vimrc
-    map <leader>e :e! D:\Softwares\Vimv\_vimrc<cr>
+    map <leader>e :e! D:\Softwares\Vim\_vimrc<cr>
 
     " When vimrc is edited, reload it
-    autocmd! bufwritepost vimrc source D:\Softwares\Vimv\_vimrc
+    autocmd! bufwritepost vimrc source D:\Softwares\Vim\_vimrc
 else
     " Fast editing of the .vimrc
-    map <leader>e :e! D:\Softwares\Vimv\_vimrc<cr>
+    map <leader>e :e! D:\Softwares\Vim\_vimrc<cr>
 
     " When vimrc is edited, reload it
-    autocmd! bufwritepost vimrc source D:\Softwares\Vimv\_vimrc
+    autocmd! bufwritepost vimrc source D:\Softwares\Vim\_vimrc
 endif
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -69,6 +69,7 @@ Bundle 'tpope/vim-rails'
 Bundle 'tpope/vim-endwise'
 Bundle 'nathanaelkane/vim-indent-guides'
 Bundle 'Lokaltog/vim-easymotion'
+Bundle 'Lokaltog/vim-powerline'
 Bundle 'mattn/zencoding-vim'
 Bundle 'xolox/vim-shell'
 Bundle 'xolox/vim-session'
@@ -233,7 +234,7 @@ vnoremap <silent> # :call VisualSelection('b')<CR>
 vnoremap <silent> gv :call VisualSelection('gv')<CR>
 
 " Some useful keys for vimgrep
-map <leader>g :vimgrep // **/*.<left><left><left><left><left><left><left>
+map <leader>r :vimgrep // **/*.<left><left><left><left><left><left><left>
 map <leader><space> :vimgrep // <C-R>%<C-A><right><right><right><right><right><right><right><right><right>
 
 " When you press <leader>r you can search and replace the selected text
@@ -439,15 +440,6 @@ vnoremap $3 <esc>`>a}<esc>`<i{<esc>
 vnoremap $$ <esc>`>a"<esc>`<i"<esc>
 vnoremap $q <esc>`>a'<esc>`<i'<esc>
 vnoremap $e <esc>`>a"<esc>`<i"<esc>
-
-" Map auto complete of (, ", ', [
-"inoremap $1 ()<esc>i
-"inoremap $2 []<esc>i
-"inoremap $3 {}<esc>i
-"inoremap $4 {<esc>o}<esc>O
-"inoremap $q ''<esc>i
-"inoremap $e ""<esc>i
-"inoremap $t <><esc>i
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -678,7 +670,7 @@ inoremap <expr><C-l>     neocomplcache#complete_common_string()
 
 " Recommended key-mappings for neocomplcache
 " <CR>: close popup and save indent. 
-inoremap <expr><CR>  neocomplcache#smart_close_popup()."\<CR>" 
+inoremap <expr><CR>  neocomplcache#smart_close_popup()
 " <TAB>: completion. 
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>" 
 " <C-h>, <BS>: close popup and delete backword char. 
@@ -773,3 +765,6 @@ let g:unite_abbr_highlight = 'TabLine'
 
 " For optimize.
 let g:unite_source_file_mru_filename_format = ''
+
+"" Vim-powerline
+let Powerline_cache_file="C:\Users\TheEmperor\.vim\Powerline.cache"
