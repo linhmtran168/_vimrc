@@ -767,4 +767,4 @@ let g:unite_abbr_highlight = 'TabLine'
 let g:unite_source_file_mru_filename_format = ''
 
 "" Vim-powerline
-let Powerline_cache_file="C:\Users\TheEmperor\.vim\Powerline.cache"
+let Powerline_cache_file="C:\\Users\\TheEmperor\\.vim\\Powerline.cache"
