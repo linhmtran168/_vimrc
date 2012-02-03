@@ -90,6 +90,7 @@ Bundle 'scrooloose/syntastic'
 Bundle 'nelstrom/vim-textobj-rubyblock'
 Bundle 'kana/vim-textobj-user'
 Bundle 'juvenn/mustache.vim'
+Bundle 'kien/ctrlp.vim'
 
 " Vim scripts repos
 Bundle 'IndexedSearch'
