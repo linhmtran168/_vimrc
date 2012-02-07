@@ -80,24 +80,22 @@ Bundle 'tomtom/tlib_vim'
 Bundle 'tomtom/tcomment_vim'
 Bundle 'pangloss/vim-javascript'
 Bundle 'Shougo/neocomplcache'
-Bundle 'Shougo/unite.vim'
-Bundle 'Shougo/vimfiler'
 Bundle 'Raimondi/delimitMate'
 Bundle 'derekwyatt/vim-scala'
 Bundle 'othree/html5.vim'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'scrooloose/syntastic'
+Bundle 'scrooloose/nerdtree'
 Bundle 'nelstrom/vim-textobj-rubyblock'
 Bundle 'kana/vim-textobj-user'
 Bundle 'juvenn/mustache.vim'
 Bundle 'kien/ctrlp.vim'
+Bundle 'majutsushi/tagbar'
 
 " Vim scripts repos
 Bundle 'IndexedSearch'
 Bundle 'YankRing.vim'
 Bundle 'jQuery'
-Bundle 'taglist.vim'
-Bundle 'The-NERD-tree'
 Bundle 'minibufexpl.vim'
 Bundle 'python.vim'
 Bundle 'css_color.vim'
@@ -591,15 +589,6 @@ map <leader>f :MRU<CR>
 
 
 """"""""""""""""""""""""""""""
-" => Command-T
-""""""""""""""""""""""""""""""
-" let g:CommandTMaxHeight = 15
-" set wildignore+=*.o,*.obj,.git,*.pyc
-" noremap <leader>j :CommandT<cr>
-" noremap <leader>y :CommandTFlush<cr>
-
-
-""""""""""""""""""""""""""""""
 " => Vim grep
 """"""""""""""""""""""""""""""
 let Grep_Skip_Dirs = 'RCS CVS SCCS .svn generated'
@@ -695,21 +684,15 @@ let g:neocomplcache_omni_functions = {
     \ 'ruby' : 'rubycomplete#Complete',
     \}
 let g:neocomplcache_vim_completefuncs = {
-    \ 'Unite' : 'unite#complete_source',
     \ 'VimShellExecute' : 'vimshell#complete#vimshell_execute_complete#completefunc',
     \ 'VimShellInteractive' : 'vimshell#complete#vimshell_execute_complete#completefunc',
     \ 'VimShellTerminal' : 'vimshell#complete#vimshell_execute_complete#completefunc',
-    \ 'VimFiler' : 'vimfiler#complete',
     \}
 
 "" NERDTree configuration
 let NERDTreeChDirMode = 2
 let NERDTreeShowBookmarks = 1
-let NERDTreeWinSize = 20
-
-"" Tasklist configuration
-let Tlist_Use_Right_Window = 1
-let Tlist_WinWidth = 26
+let NERDTreeWinSize = 30
 
 "" Minibuffer configuration
 let g:miniBufExplMapCTabSwitchBufs = 1
@@ -731,41 +714,48 @@ let g:EasyMotion_leader_key='<leader>m'
 let g:user_zen_complete_tag = 1
 let g:user_zen_leader_key = '<c-space>'
 
-"" VimFiler
-noremap <silent> <Leader>s :VimFiler<CR>
-
-"" Unite
-"The prefix key.
-nnoremap [unite] <Nop>
-nmap f [unite]
-
-nnoremap <silent> [unite]c :<C-u>UniteWithCurrentDir -buffer-name=files buffer file_mru bookmark file<CR>
-nnoremap <silent> [unite]b :<C-u>UniteWithBufferDir -buffer-name=files -prompt=%\ buffer file_mru bookmark file<CR>
-nnoremap <silent> [unite]r :<C-u>Unite -buffer-name=register register<CR>
-nnoremap <silent> [unite]o :<C-u>Unite outline<CR>
-nnoremap [unite]f :<C-u>Unite source<CR>
-
-" Start insert.
-"let g:unite_enable_start_insert = 1
-
-autocmd FileType unite call s:unite_my_settings()
-function! s:unite_my_settings()"{{{
-
-" Overwrite settings.
-nmap <buffer> <ESC> <Plug>(unite_exit)
-imap <buffer> jj <Plug>(unite_insert_leave)
-"imap <buffer> <C-w> <Plug>(unite_delete_backward_path)
-
-" <C-l>: manual neocomplcache completion.
-inoremap <buffer> <C-l> <C-x><C-u><C-p><Down>
-endfunction"}}}
-
-let g:unite_source_file_mru_limit = 200
-let g:unite_cursor_line_highlight = 'TabLineSel'
-let g:unite_abbr_highlight = 'TabLine'
-
-" For optimize.
-let g:unite_source_file_mru_filename_format = ''
-
 "" Vim-powerline
 let Powerline_cache_file="C:\\Users\\TheEmperor\\.vim\\Powerline.cache"
+
+"" Tagbar
+nmap <F8> :TagbarToggle<CR>
+
+"" CtrlP
+let g:ctrlp_map = '<leader>j'
+
+"" CoffeeTags
+" Add this type definition to your vimrc
+" or do
+" coffeetags --vim-conf >> <PATH TO YOUR VIMRC>
+" if you want your tags to include vars/objects do:
+" coffeetags --vim-conf --include-vars
+ let g:tagbar_type_coffee = {
+  \ 'kinds' : [
+  \   'f:functions',
+  \   'o:object'
+  \ ],
+  \ 'kind2scope' : {
+  \  'f' : 'object',
+  \   'o' : 'object'
+  \},
+  \ 'sro' : ".",
+  \ 'ctagsbin' : 'coffeetags',
+  \ 'ctagsargs' : ' ',
+  \}
+
+ "" Scala Tagbar
+ let g:tagbar_type_scala = {
+    \ 'ctagstype' : 'Scala',
+    \ 'kinds' : [
+        \ 'p:packages:1',
+        \ 'V:values',
+        \ 'v:variables',
+        \ 'T:types',
+        \ 't:traits',
+        \ 'o:objects',
+        \ 'a:aclasses',
+        \ 'c:classes',
+        \ 'r:cclasses',
+        \ 'm:methods'
+    \]
+\}
