@@ -91,9 +91,11 @@ Bundle 'kana/vim-textobj-user'
 Bundle 'juvenn/mustache.vim'
 Bundle 'kien/ctrlp.vim'
 Bundle 'majutsushi/tagbar'
+Bundle 'jeetsukumaran/vim-buffergator'
 
 " Vim scripts repos
 Bundle 'IndexedSearch'
+Bundle 'ZoomWin'
 Bundle 'YankRing.vim'
 Bundle 'jQuery'
 Bundle 'minibufexpl.vim'
@@ -103,7 +105,6 @@ Bundle 'bufexplorer.zip'
 Bundle 'mru.vim'
 Bundle 'matchit.zip'
 Bundle 'FencView.vim'
-Bundle 'TaskList.vim'
 Bundle 'peaksea'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -693,6 +694,8 @@ let g:neocomplcache_vim_completefuncs = {
 let NERDTreeChDirMode = 2
 let NERDTreeShowBookmarks = 1
 let NERDTreeWinSize = 30
+let NERDTreeQuitOnOpen = 1
+nmap <leader>n :NERDTreeToggle<CR>
 
 "" Minibuffer configuration
 let g:miniBufExplMapCTabSwitchBufs = 1
@@ -722,8 +725,9 @@ nmap <F8> :TagbarToggle<CR>
 
 "" CtrlP
 let g:ctrlp_map = '<leader>j'
-
-"" CoffeeTags
+let g:tagbar_width = 30
+let g:tagbar_expand = 1
+" CoffeeTags
 " Add this type definition to your vimrc
 " or do
 " coffeetags --vim-conf >> <PATH TO YOUR VIMRC>
