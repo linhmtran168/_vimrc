@@ -105,6 +105,7 @@ Bundle 'bufexplorer.zip'
 Bundle 'mru.vim'
 Bundle 'matchit.zip'
 Bundle 'FencView.vim'
+Bundle 'JSON.vim'
 Bundle 'peaksea'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -560,9 +561,9 @@ au FileType python map <buffer> <leader>D ?def
 """"""""""""""""""""""""""""""
 " => JavaScript section
 """""""""""""""""""""""""""""""
-au FileType javascript call JavaScriptFold()
-au FileType javascript setl fen
-au FileType javascript setl nocindent
+" au FileType javascript call JavaScriptFold()
+" au FileType javascript setl fen
+" au FileType javascript setl nocindent
 
 au FileType javascript imap <c-t> AJS.log();<esc>hi
 au FileType javascript imap <c-a> alert();<esc>hi
@@ -720,11 +721,11 @@ let g:user_zen_leader_key = '<c-space>'
 "" Vim-powerline
 let Powerline_cache_file="C:\\Users\\TheEmperor\\.vim\\Powerline.cache"
 
-"" Tagbar
-nmap <F8> :TagbarToggle<CR>
-
 "" CtrlP
 let g:ctrlp_map = '<leader>j'
+
+"" Tagbar
+nmap <F8> :TagbarToggle<CR>
 let g:tagbar_width = 30
 let g:tagbar_expand = 1
 " CoffeeTags
@@ -763,3 +764,15 @@ let g:tagbar_expand = 1
         \ 'm:methods'
     \]
 \}
+
+"" JSON
+au! BufRead,BufNewFile *.json set filetype=json
+augroup json_autocmd 
+    autocmd! 
+    autocmd FileType json set autoindent 
+    autocmd FileType json set formatoptions=tcq2l 
+    autocmd FileType json set textwidth=78 shiftwidth=4 
+    autocmd FileType json set softtabstop=4 tabstop=4 
+    autocmd FileType json set expandtab 
+    autocmd FileType json set foldmethod=syntax 
+augroup END
