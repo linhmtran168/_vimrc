@@ -106,7 +106,12 @@ Bundle 'mru.vim'
 Bundle 'matchit.zip'
 Bundle 'FencView.vim'
 Bundle 'JSON.vim'
+Bundle 'colorsupport.vim'
+
+" Vim themes
 Bundle 'peaksea'
+Bundle 'Zenburn'
+Bundle 'Lucius'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => VIM user interface
@@ -164,14 +169,12 @@ endif
 
 if has("gui_running")
   set guioptions-=T
-  set background=dark
   set lines=36
-  colorscheme peaksea
+  colorscheme lucius
   set nonu
 else
   set t_Co=256
-  " colorscheme peaksea
-  set background=dark
+  colorscheme lucius
   set nonu
 endif
 
@@ -778,3 +781,6 @@ augroup json_autocmd
     autocmd FileType json set expandtab 
     autocmd FileType json set foldmethod=syntax 
 augroup END
+
+"" Zenburn
+let g:zenburn_high_Contrast=1
