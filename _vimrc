@@ -776,3 +776,6 @@ augroup END
 
 "" Zenburn
 let g:zenburn_high_Contrast=1
+
+"" delimitMate
+au FileType html,xml,php let b:delimitMate_matchpairs = "(:),[:],{:}"
