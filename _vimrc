@@ -73,13 +73,13 @@ Bundle 'Lokaltog/vim-powerline'
 Bundle 'mattn/zencoding-vim'
 Bundle 'xolox/vim-shell'
 Bundle 'xolox/vim-session'
-Bundle 'sukima/xmledit'
 Bundle 'hallison/vim-markdown'
 Bundle 'MarcWeber/vim-addon-mw-utils'
 Bundle 'tomtom/tlib_vim'
 Bundle 'tomtom/tcomment_vim'
 Bundle 'pangloss/vim-javascript'
 Bundle 'Shougo/neocomplcache'
+Bundle 'Shougo/neocomplcache-snippets-complete'
 Bundle 'Raimondi/delimitMate'
 Bundle 'derekwyatt/vim-scala'
 Bundle 'othree/html5.vim'
@@ -92,6 +92,7 @@ Bundle 'juvenn/mustache.vim'
 Bundle 'kien/ctrlp.vim'
 Bundle 'majutsushi/tagbar'
 Bundle 'jeetsukumaran/vim-buffergator'
+Bundle 'linhmtran168/xmledit'
 
 " Vim scripts repos
 Bundle 'IndexedSearch'
@@ -101,7 +102,6 @@ Bundle 'jQuery'
 Bundle 'minibufexpl.vim'
 Bundle 'python.vim'
 Bundle 'css_color.vim'
-Bundle 'bufexplorer.zip'
 Bundle 'mru.vim'
 Bundle 'matchit.zip'
 Bundle 'FencView.vim'
@@ -297,10 +297,10 @@ cnoremap <C-P> <Up>
 cnoremap <C-N> <Down>
 
 " Useful on some European keyboards
-map ½ $
-imap ½ $
-vmap ½ $
-cmap ½ $
+map ? $
+imap ? $
+vmap ? $
+cmap ? $
 
 
 func! Cwd()
@@ -491,15 +491,6 @@ map <leader>n :cn<cr>
 map <leader>p :cp<cr>
 
 
-""""""""""""""""""""""""""""""
-" => bufExplorer plugin
-""""""""""""""""""""""""""""""
-let g:bufExplorerDefaultHelp=0
-let g:bufExplorerShowRelativePath=1
-let g:bufExplorerFindActive=1
-let g:bufExplorerSortBy='name'
-map <leader>o :BufExplorer<cr>
-
 
 """"""""""""""""""""""""""""""
 " => Minibuffer plugin
@@ -624,6 +615,8 @@ if MySys() == "mac"
     endif
 endif
 
+
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => My personal configuration
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -721,7 +714,6 @@ let g:EasyMotion_leader_key='<leader>m'
 
 "" Zencoding
 let g:user_zen_complete_tag = 1
-let g:user_zen_leader_key = '<c-space>'
 
 "" Vim-powerline
 let Powerline_cache_file="C:\\Users\\TheEmperor\\.vim\\Powerline.cache"
