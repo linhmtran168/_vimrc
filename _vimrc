@@ -718,7 +718,7 @@ let g:EasyMotion_leader_key='<leader>m'
 let g:user_zen_complete_tag = 1
 
 "" Vim-powerline
-let Powerline_cache_file="C:\\Users\\TheEmperor\\.vim\\Powerline.cache"
+let Powerline_cache_file= $HOME . "\\.vim\\Powerline.cache"
 
 "" CtrlP
 let g:ctrlp_map = '<leader>j'
