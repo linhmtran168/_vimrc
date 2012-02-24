@@ -67,6 +67,7 @@ Bundle 'tpope/vim-ragtag'
 Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-rails'
 Bundle 'tpope/vim-endwise'
+Bundle 'tpope/vim-haml'
 Bundle 'nathanaelkane/vim-indent-guides'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'Lokaltog/vim-powerline'
@@ -92,6 +93,9 @@ Bundle 'juvenn/mustache.vim'
 Bundle 'kien/ctrlp.vim'
 Bundle 'majutsushi/tagbar'
 Bundle 'jeetsukumaran/vim-buffergator'
+Bundle 'altercation/vim-colors-solarized'
+Bundle 'wavded/vim-stylus'
+Bundle 'godlygeek/tabular'
 Bundle 'linhmtran168/xmledit'
 
 " Vim scripts repos
@@ -106,7 +110,6 @@ Bundle 'mru.vim'
 Bundle 'matchit.zip'
 Bundle 'FencView.vim'
 Bundle 'JSON.vim'
-Bundle 'colorsupport.vim'
 Bundle 'Jinja'
 Bundle 'django.vim'
 
@@ -172,11 +175,14 @@ endif
 if has("gui_running")
   set guioptions-=T
   set lines=36
-  colorscheme lucius
+  set background=dark
+  colorscheme solarized
   set nonu
 else
   set t_Co=256
-  colorscheme lucius
+  set background=dark
+  let g:solarized_termcolors=256
+  colorscheme solarized
   set nonu
 endif
 
