@@ -107,6 +107,8 @@ Bundle 'matchit.zip'
 Bundle 'FencView.vim'
 Bundle 'JSON.vim'
 Bundle 'colorsupport.vim'
+Bundle 'Jinja'
+Bundle 'django.vim'
 
 " Vim themes
 Bundle 'peaksea'
