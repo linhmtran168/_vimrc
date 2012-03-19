@@ -305,10 +305,10 @@ cnoremap <C-P> <Up>
 cnoremap <C-N> <Down>
 
 " Useful on some European keyboards
-map ? $
-imap ? $
-vmap ? $
-cmap ? $
+" map ? $
+" imap ? $
+" vmap ? $
+" cmap ? $
 
 
 func! Cwd()
