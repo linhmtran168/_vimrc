@@ -101,6 +101,7 @@ Bundle 'skammer/vim-css-color'
 Bundle 'linhmtran168/xmledit'
 Bundle 'michaeljsmith/vim-indent-object'
 Bundle 'ecomba/vim-ruby-refactoring'
+Bundle 'digitaltoad/vim-jade'
 
 " Vim scripts repos
 Bundle 'IndexedSearch'
@@ -793,3 +794,6 @@ au FileType html,xml,php let b:delimitMate_matchpairs = "(:),[:],{:}"
 let delimitMate_expand_cr = 1
 let delimitMate_expand_space = 1
 let delimitMate_balance_matchpairs = 1
+
+"" Jade template syntax
+au BufRead,BufNewFile *.jade set ft=jade syntax=jade
