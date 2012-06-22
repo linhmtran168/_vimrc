@@ -116,6 +116,7 @@ Bundle 'FencView.vim'
 Bundle 'JSON.vim'
 Bundle 'Jinja'
 Bundle 'django.vim'
+Bundle 'indenthtml.vim'
 
 " Vim themes
 Bundle 'peaksea'
@@ -797,3 +798,8 @@ let delimitMate_balance_matchpairs = 1
 
 "" Jade template syntax
 au BufRead,BufNewFile *.jade set ft=jade syntax=jade
+
+"" Html indent
+let g:html_indent_inctags = "html,body,head,tbody"
+let g:html_indent_script1 = "inc"
+let g:html_indent_style1 = "inc"
