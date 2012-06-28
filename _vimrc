@@ -102,6 +102,7 @@ Bundle 'linhmtran168/xmledit'
 Bundle 'michaeljsmith/vim-indent-object'
 Bundle 'ecomba/vim-ruby-refactoring'
 Bundle 'digitaltoad/vim-jade'
+Bundle 'myusuf3/numbers.vim'
 
 " Vim scripts repos
 Bundle 'IndexedSearch'
@@ -803,3 +804,6 @@ au BufRead,BufNewFile *.jade set ft=jade syntax=jade
 let g:html_indent_inctags = "html,body,head,tbody"
 let g:html_indent_script1 = "inc"
 let g:html_indent_style1 = "inc"
+
+"" Number
+nnoremap <leader>s :NumbersToggle<CR>
