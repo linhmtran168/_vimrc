@@ -103,6 +103,7 @@ Bundle 'michaeljsmith/vim-indent-object'
 Bundle 'ecomba/vim-ruby-refactoring'
 Bundle 'digitaltoad/vim-jade'
 Bundle 'myusuf3/numbers.vim'
+Bundle 'jelera/vim-javascript-syntax'
 
 " Vim scripts repos
 Bundle 'IndexedSearch'
@@ -118,11 +119,6 @@ Bundle 'JSON.vim'
 Bundle 'Jinja'
 Bundle 'django.vim'
 Bundle 'indenthtml.vim'
-
-" Vim themes
-Bundle 'peaksea'
-Bundle 'Zenburn'
-Bundle 'Lucius'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => VIM user interface
