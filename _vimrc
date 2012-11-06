@@ -36,22 +36,23 @@ nmap <leader>w :w!<cr>
 
 if MySys() == "windows"
     " Fast editing of the .vimrc
-    map <leader>e :e! D:\Softwares\Vim\_vimrc<cr>
+    map <leader>e :e! E:\Softwares\Vim\_vimrc<cr>
 
     " When vimrc is edited, reload it
-    autocmd! bufwritepost vimrc source D:\Softwares\Vim\_vimrc
+    autocmd! bufwritepost vimrc source E:\Softwares\Vim\_vimrc
 else
     " Fast editing of the .vimrc
-    map <leader>e :e! D:\Softwares\Vim\_vimrc<cr>
+    map <leader>e :e! E:\Softwares\Vim\_vimrc<cr>
 
     " When vimrc is edited, reload it
-    autocmd! bufwritepost vimrc source D:\Softwares\Vim\_vimrc
+    autocmd! bufwritepost vimrc source E:\Softwares\Vim\_vimrc
 endif
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Vundle Configuration
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set rtp+=C:\Users\TheEmperor\.vim\bundle\vundle\
+set shellxquote=""
+set rtp+=C:\Users\SuperLinh\.vim\bundle\vundle\
 call vundle#rc()
 
 " let Vundle manage Vundle required!
@@ -73,16 +74,8 @@ Bundle 'nathanaelkane/vim-indent-guides'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'mattn/zencoding-vim'
-Bundle 'xolox/vim-shell'
-Bundle 'xolox/vim-session'
 Bundle 'hallison/vim-markdown'
-Bundle 'MarcWeber/vim-addon-mw-utils'
-Bundle 'tomtom/tlib_vim'
 Bundle 'tomtom/tcomment_vim'
-Bundle 'pangloss/vim-javascript'
-Bundle 'Shougo/neocomplcache'
-Bundle 'Shougo/neocomplcache-snippets-complete'
-Bundle 'Raimondi/delimitMate'
 Bundle 'derekwyatt/vim-scala'
 Bundle 'othree/html5.vim'
 Bundle 'kchmck/vim-coffee-script'
@@ -94,31 +87,29 @@ Bundle 'juvenn/mustache.vim'
 Bundle 'kien/ctrlp.vim'
 Bundle 'majutsushi/tagbar'
 Bundle 'jeetsukumaran/vim-buffergator'
-Bundle 'altercation/vim-colors-solarized'
 Bundle 'wavded/vim-stylus'
 Bundle 'godlygeek/tabular'
 Bundle 'skammer/vim-css-color'
 Bundle 'linhmtran168/xmledit'
+Bundle 'linhmtran168/vim-javascript'
 Bundle 'michaeljsmith/vim-indent-object'
 Bundle 'ecomba/vim-ruby-refactoring'
 Bundle 'digitaltoad/vim-jade'
-Bundle 'myusuf3/numbers.vim'
-Bundle 'jelera/vim-javascript-syntax'
+Bundle 'Townk/vim-autoclose'
+Bundle 'ervandew/supertab'
 
 " Vim scripts repos
 Bundle 'IndexedSearch'
 Bundle 'ZoomWin'
-Bundle 'YankRing.vim'
 Bundle 'jQuery'
 Bundle 'minibufexpl.vim'
 Bundle 'python.vim'
 Bundle 'mru.vim'
-Bundle 'matchit.zip'
-Bundle 'FencView.vim'
 Bundle 'JSON.vim'
 Bundle 'Jinja'
 Bundle 'django.vim'
 Bundle 'indenthtml.vim'
+Bundle 'vimwiki'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => VIM user interface
@@ -157,6 +148,10 @@ set novisualbell
 set t_vb=
 set tm=500
 
+"" Complete option
+set complete-=i
+"" Fold option
+set nofoldenable
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Colors and Fonts
@@ -178,13 +173,12 @@ if has("gui_running")
   set guioptions-=T
   set lines=36
   set background=dark
-  colorscheme solarized
+  colorscheme Tomorrow-Night
   set nonu
 else
   set t_Co=256
   set background=dark
-  let g:solarized_termcolors=256
-  colorscheme solarized
+  colorscheme Tomorrow-Night
   set nonu
 endif
 
@@ -222,10 +216,10 @@ endtry
 " => Text, tab and indent related
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set expandtab
-set shiftwidth=4
-set tabstop=4
+set shiftwidth=2
+set tabstop=2
 set smarttab
-set softtabstop=4
+set softtabstop=2
 
 set lbr
 set tw=500
@@ -566,10 +560,10 @@ au FileType python map <buffer> <leader>D ?def
 " => JavaScript section
 """""""""""""""""""""""""""""""
 " au FileType javascript call JavaScriptFold()
-au FileType javascript setl fen
+" au FileType javascript setl fen
 au FileType javascript setl nocindent
-au FileType javascript setl foldmethod=syntax
-au FileType javascript setl foldlevelstart=1
+" au FileType javascript setl foldmethod=syntax
+" au FileType javascript setl foldlevelstart=1
 
 au FileType javascript imap <c-t> AJS.log();<esc>hi
 au FileType javascript imap <c-a> alert();<esc>hi
@@ -577,16 +571,16 @@ au FileType javascript imap <c-a> alert();<esc>hi
 au FileType javascript inoremap <buffer> $r return 
 au FileType javascript inoremap <buffer> $f //--- PH ----------------------------------------------<esc>FP2xi
 
-function! JavaScriptFold() 
-    setl foldmethod=syntax
-    setl foldlevelstart=1
-    syn region foldBraces start=/{/ end=/}/ transparent fold keepend extend
-
-    function! FoldText()
-        return substitute(getline(v:foldstart), '{.*', '{...}', '')
-    endfunction
-    setl foldtext=FoldText()
-endfunction
+" function! JavaScriptFold() 
+"     setl foldmethod=syntax
+"     setl foldlevelstart=1
+"     syn region foldBraces start=/{/ end=/}/ transparent fold keepend extend
+" 
+"     function! FoldText()
+"         return substitute(getline(v:foldstart), '{.*', '{...}', '')
+"     endfunction
+"     setl foldtext=FoldText()
+" endfunction
 
 
 """"""""""""""""""""""""""""""
@@ -630,75 +624,6 @@ endif
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => My personal configuration
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"""""""" Necomplcache configuration
-" Use neocomplcache
-let g:neocomplcache_enable_at_startup = 1
-" Use smartcase.
-let g:neocomplcache_enable_smart_case = 1
-" Use camel case completion.
-let g:neocomplcache_enable_camel_case_completion = 1
-" Use underbar completion.
-let g:neocomplcache_enable_underbar_completion = 1
-" Set minimum syntax keyword length.
-let g:neocomplcache_min_syntax_length = 3
-let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'
-
-" Define dictionary.
-let g:neocomplcache_dictionary_filetype_lists = {
-    \ 'default' : '',
-    \ 'vimshell' : $HOME.'/.vimshell_hist',
-    \ 'scheme' : $HOME.'/.gosh_completions'
-    \ }
-
-" Define keyword.
-if !exists('g:neocomplcache_keyword_patterns')
-    let g:neocomplcache_keyword_patterns = {}
-endif
-let g:neocomplcache_keyword_patterns['default'] = '\h\w*'
-
-" Plugin key-mappings.
-imap <C-k>     <Plug>(neocomplcache_snippets_expand)
-smap <C-k>     <Plug>(neocomplcache_snippets_expand)
-inoremap <expr><C-g>     neocomplcache#undo_completion()
-inoremap <expr><C-l>     neocomplcache#complete_common_string()
-
-" superTab like snippets behavior
-" imap <expr><TAB> "neocomplcache#sources#snippets_complete#expandable() ? "\<Plug>(neocomplcache_snippets_expand)" : pumvisible() ? "\<C-n>" : "\<TAB>"
-
-" AutoComplPop like behavior.
-"let g:neocomplcache_enable_auto_select = 1
-
-" Recommended key-mappings for neocomplcache
-" <CR>: close popup and save indent. 
-inoremap <expr><CR>  neocomplcache#smart_close_popup()
-" <TAB>: completion. 
-inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>" 
-" <C-h>, <BS>: close popup and delete backword char. 
-inoremap <expr><C-h> neocomplcache#smart_close_popup()."\<C-h>" 
-inoremap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>" 
-inoremap <expr><C-y>  neocomplcache#close_popup() 
-inoremap <expr><C-e>  neocomplcache#cancel_popup() 
-
-" Enable heavy omni completion for neocomplcache
-if !exists('g:neocomplcache_omni_patterns')
-  let g:neocomplcache_omni_patterns = {}
-endif
-let g:neocomplcache_omni_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
-let g:neocomplcache_omni_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
-let g:neocomplcache_omni_patterns.c = '\%(\.\|->\)\h\w*'
-let g:neocomplcache_omni_patterns.cpp = '\h\w*\%(\.\|->\)\h\w*\|\h\w*::'
-
-" Complete Functions
-let g:neocomplcache_omni_functions = {
-    \ 'python' : 'pythoncomplete#Complete',
-    \ 'ruby' : 'rubycomplete#Complete',
-    \}
-let g:neocomplcache_vim_completefuncs = {
-    \ 'VimShellExecute' : 'vimshell#complete#vimshell_execute_complete#completefunc',
-    \ 'VimShellInteractive' : 'vimshell#complete#vimshell_execute_complete#completefunc',
-    \ 'VimShellTerminal' : 'vimshell#complete#vimshell_execute_complete#completefunc',
-    \}
-
 "" NERDTree configuration
 let NERDTreeChDirMode = 2
 let NERDTreeShowBookmarks = 1
@@ -784,15 +709,6 @@ augroup json_autocmd
     autocmd FileType json set foldmethod=syntax 
 augroup END
 
-"" Zenburn
-let g:zenburn_high_Contrast=1
-
-"" delimitMate
-au FileType html,xml,php let b:delimitMate_matchpairs = "(:),[:],{:}"
-let delimitMate_expand_cr = 1
-let delimitMate_expand_space = 1
-let delimitMate_balance_matchpairs = 1
-
 "" Jade template syntax
 au BufRead,BufNewFile *.jade set ft=jade syntax=jade
 
@@ -801,5 +717,16 @@ let g:html_indent_inctags = "html,body,head,tbody"
 let g:html_indent_script1 = "inc"
 let g:html_indent_style1 = "inc"
 
-"" Number
-nnoremap <leader>s :NumbersToggle<CR>
+"" Vimwiki
+let g:vimwiki_list = [{ 'path': 'D:\SkyDrive\Documents\vimwiki', 'syntax': 'markdown', 'ext': '.md' }]
+
+"" Indent for python, java, c, cpp
+autocmd FileType python,java,c,cpp,markdown set softtabstop=4
+autocmd FileType python,java,c,cpp,markdown set shiftwidth=4
+autocmd FileType python,java,c,cpp,markdown set tabstop=4
+
+"" Vim powerline
+let g:Powerline_symbols = 'fancy'
+
+"" SuperTab configuration
+let g:SuperTabDefaultCompletionType = "context"
