@@ -655,6 +655,9 @@ let Powerline_cache_file= $HOME . "\\.vim\\Powerline.cache"
 
 "" CtrlP
 let g:ctrlp_map = '<leader>j'
+nmap ; :CtrlPBuffer<CR>
+let g:ctrlp_match_window_reversed = 0
+let g:ctrlp_custom_ignore = '\v\~$|\.(o|swp|pyc|wav|mp3|ogg|blend)$|(^|[/\\])\.(hg|git|bzr)($|[/\\])|__init__\.py'
 
 "" Tagbar
 nmap <F8> :TagbarToggle<CR>
